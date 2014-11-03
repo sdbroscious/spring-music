@@ -16,5 +16,6 @@ target/
 
 .gradle
 build/
+bin/
 
 *.log*
