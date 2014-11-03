@@ -1,6 +1,6 @@
-package org.cloudfoundry.samples.music.web.controllers;
+package org.cloudfoundry.samples.music.web;
 
-import org.cloudfoundry.samples.music.domain.ApplicationInfo;
+import org.cloudfoundry.samples.music.model.ApplicationInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.Cloud;
 import org.springframework.cloud.service.ServiceInfo;
