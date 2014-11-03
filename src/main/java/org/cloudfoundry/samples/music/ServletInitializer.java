@@ -1,4 +1,4 @@
-package org.cloudfoundry.samples.music.config;
+package org.cloudfoundry.samples.music;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;

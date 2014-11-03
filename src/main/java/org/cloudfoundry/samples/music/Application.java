@@ -1,4 +1,4 @@
-package org.cloudfoundry.samples.music.config;
+package org.cloudfoundry.samples.music;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
