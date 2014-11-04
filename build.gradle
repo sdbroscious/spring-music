@@ -55,6 +55,7 @@ buildscript {
 }
 
 repositories {
+    jcenter()
     mavenLocal()
     maven { url "http://repo.spring.io/milestone" }
     mavenCentral()
