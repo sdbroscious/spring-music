@@ -1,0 +1,217 @@
+[ {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "Nevermind",
+  "artist" : "Nirvana",
+  "releaseYear" : "1991",
+  "genre" : "Rock",
+  "artworkUrl" : "http://a4.mzstatic.com/us/r30/Features/d0/cc/62/dj.nanioukp.100x100-75.jpg",
+  "rating" : 3
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "Pet Sounds",
+  "artist" : "The Beach Boys",
+  "releaseYear" : "1966",
+  "genre" : "Rock",
+  "artworkUrl" : "http://a2.mzstatic.com/us/r30/Music/v4/73/c4/c7/73c4c788-eb8f-5e04-6fcc-3be18af3b2e1/05099931901451.100x100-75.jpg",
+  "rating" : 0
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "What's Going On",
+  "artist" : "Marvin Gaye",
+  "releaseYear" : "1971",
+  "genre" : "Rock",
+  "artworkUrl" : "http://a1.mzstatic.com/us/r30/Music/v4/a0/3d/6f/a03d6fc0-766e-0abe-d835-ff64e6846de5/UMG_cvrart_00602537046645_01_RGB72_1200x1200_12UMGIM17593.100x100-75.jpg",
+  "rating" : 3
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "Are You Experienced?",
+  "artist" : "Jimi Hendrix Experience",
+  "releaseYear" : "1967",
+  "genre" : "Rock",
+  "artworkUrl" : "http://a1.mzstatic.com/us/r30/Music/7d/55/12/mzi.wwsnajjq.100x100-75.jpg",
+  "rating" : 4
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "The Joshua Tree",
+  "artist" : "U2",
+  "releaseYear" : "1987",
+  "genre" : "Rock",
+  "artworkUrl" : "http://a1.mzstatic.com/us/r30/Music/v4/94/eb/dc/94ebdc5f-2b8a-c123-0d83-3334c27bc90d/dj.jrlmqsuc.100x100-75.jpg",
+  "rating" : 2
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "Abbey Road",
+  "artist" : "The Beatles",
+  "releaseYear" : "1969",
+  "genre" : "Rock",
+  "artworkUrl" : "http://a1.mzstatic.com/us/r30/Music/17/07/36/mzi.ldnorbao.100x100-75.jpg",
+  "rating" : 4
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "Rumours",
+  "artist" : "Fleetwood Mac",
+  "releaseYear" : "1977",
+  "genre" : "Rock",
+  "artworkUrl" : "http://a1.mzstatic.com/us/r30/Music/v4/f6/b5/b2/f6b5b2f0-6b11-fcb2-1b51-0f89ccb545b0/081227970949.100x100-75.jpg",
+  "rating" : 3
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "Thriller",
+  "artist" : "Michael Jackson",
+  "releaseYear" : "1982",
+  "genre" : "Pop",
+  "artworkUrl" : "http://a5.mzstatic.com/us/r30/Features/v4/57/9a/d2/579ad2e5-e9eb-630a-dafd-1704e0fbe9cc/mza_1011095246346662165.100x100-75.jpg",
+  "rating" : 5
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "Exile on Main Street",
+  "artist" : "The Rolling Stones",
+  "releaseYear" : "1972",
+  "genre" : "Rock",
+  "artworkUrl" : null,
+  "rating" : 3
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "Born to Run",
+  "artist" : "Bruce Springsteen",
+  "releaseYear" : "1975",
+  "genre" : "Rock",
+  "artworkUrl" : "http://a4.mzstatic.com/us/r30/Features/v4/de/8e/37/de8e373d-5274-ec00-9762-77e9ae151d66/dj.uejtvvro.100x100-75.jpg",
+  "rating" : 3
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "London Calling",
+  "artist" : "The Clash",
+  "releaseYear" : "1980",
+  "genre" : "Rock",
+  "artworkUrl" : "http://a5.mzstatic.com/us/r30/Music6/v4/9e/fd/7a/9efd7a1a-63bb-6b63-25ea-bd59c78fa8cd/886443520721.100x100-75.jpg",
+  "rating" : 2
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "Hotel California",
+  "artist" : "The Eagles",
+  "releaseYear" : "1976",
+  "genre" : "Rock",
+  "artworkUrl" : "http://a4.mzstatic.com/us/r30/Music/v4/5c/b7/b5/5cb7b56d-d136-a811-b54f-da4c9af3fcc6/075596050920.100x100-75.jpg",
+  "rating" : 3
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "Led Zeppelin",
+  "artist" : "Led Zeppelin",
+  "releaseYear" : "1969",
+  "genre" : "Rock",
+  "artworkUrl" : "http://a1.mzstatic.com/us/r30/Music/v4/ac/e5/49/ace549c8-bde3-71fa-57f0-d9b4ad8a8cf6/603497926152.100x100-75.jpg",
+  "rating" : 0
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "IV",
+  "artist" : "Led Zeppelin",
+  "releaseYear" : "1971",
+  "genre" : "Rock",
+  "artworkUrl" : "http://a4.mzstatic.com/us/r30/Music/v4/ff/18/42/ff18423c-ea1c-8351-21b8-c74687756645/603497926121.100x100-75.jpg",
+  "rating" : 1
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "Synchronicity",
+  "artist" : "Police",
+  "releaseYear" : "1983",
+  "genre" : "Rock",
+  "artworkUrl" : "http://a5.mzstatic.com/us/r30/Features/3d/fb/57/dj.iybkjmjt.100x100-75.jpg",
+  "rating" : 2
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "Achtung Baby",
+  "artist" : "U2",
+  "releaseYear" : "1991",
+  "genre" : "Rock",
+  "artworkUrl" : "http://a3.mzstatic.com/us/r30/Features/17/2b/2d/dj.nkmuycan.100x100-75.jpg",
+  "rating" : 4
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "Let it Bleed",
+  "artist" : "The Rolling Stones",
+  "releaseYear" : "1969",
+  "genre" : "Rock",
+  "artworkUrl" : "http://a5.mzstatic.com/us/r30/Music2/v4/39/bd/a0/39bda050-3f87-4c8e-46d8-b54050a24ecf/UMG_cvrart_00018771895626_01_RGB72_1500x1500_13ABKIM00029.100x100-75.jpg",
+  "rating" : 3
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "Rubber Soul",
+  "artist" : "The Beatles",
+  "releaseYear" : "1965",
+  "genre" : "Rock",
+  "artworkUrl" : "http://a2.mzstatic.com/us/r30/Music/5b/17/1b/mzi.gljnvqzc.100x100-75.jpg",
+  "rating" : 3
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "The Ramones",
+  "artist" : "The Ramones",
+  "releaseYear" : "1976",
+  "genre" : "Rock",
+  "artworkUrl" : "http://a5.mzstatic.com/us/r30/Features4/v4/e0/34/88/e03488bc-be97-55a9-6d9e-2dccab02c3b7/dj.quodxoxa.100x100-75.jpg",
+  "rating" : 0
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "A Night At The Opera",
+  "artist" : "Queen",
+  "releaseYear" : "1975",
+  "genre" : "Rock",
+  "artworkUrl" : "http://a1.mzstatic.com/us/r30/Music1/v4/6c/d5/12/6cd512a4-d124-f932-3954-6f55ec30e326/UMG_cvrart_00050087318246_01_RGB72_1500x1500_14DMGIM05548.100x100-75.jpg",
+  "rating" : 1
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "Don't Look Back",
+  "artist" : "Boston",
+  "releaseYear" : "1978",
+  "genre" : "Rock",
+  "artworkUrl" : "http://a4.mzstatic.com/us/r30/Music/c0/7a/70/mzi.qlxhqbnd.100x100-75.jpg",
+  "rating" : 4
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "Singin' The Blues",
+  "artist" : "BB King",
+  "releaseYear" : "1956",
+  "genre" : "Blues",
+  "artworkUrl" : "http://a3.mzstatic.com/us/r30/Music4/v4/30/3d/ee/303deeff-3788-77d6-4b0b-fb068d8521b4/UMG_cvrart_00602547018045_01_RGB72_1500x1500_14UMGIM37665.100x100-75.jpg",
+  "rating" : 0
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "Born Under A Bad Sign",
+  "artist" : "Albert King",
+  "releaseYear" : "1967",
+  "genre" : "Blues",
+  "artworkUrl" : "http://a4.mzstatic.com/us/r30/Music/v4/4e/07/43/4e0743fe-5e19-4b06-4b7f-7cc9f1b92ac1/603497992249.100x100-75.jpg",
+  "rating" : 1
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "Folk Singer",
+  "artist" : "Muddy Waters",
+  "releaseYear" : "1964",
+  "genre" : "Blues",
+  "artworkUrl" : "http://a1.mzstatic.com/us/r30/Features/29/4d/46/dj.qumyzdyx.100x100-75.jpg",
+  "rating" : 4
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "King of the Delta Blues",
+  "artist" : "Robert Johnson",
+  "releaseYear" : "1961",
+  "genre" : "Blues",
+  "artworkUrl" : "http://a4.mzstatic.com/us/r30/Music/fe/b2/4f/mzi.ewxisvkg.100x100-75.jpg",
+  "rating" : 5
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "Texas Flood",
+  "artist" : "Stevie Ray Vaughan",
+  "releaseYear" : "1983",
+  "genre" : "Blues",
+  "artworkUrl" : "http://a4.mzstatic.com/us/r30/Music/66/cb/66/mzi.vmeextsi.100x100-75.jpg",
+  "rating" : 5
+}, {
+  "_class" : "org.cloudfoundry.samples.music.model.Album",
+  "title" : "Couldn't Stand The Weather",
+  "artist" : "Stevie Ray Vaughan",
+  "releaseYear" : "1984",
+  "genre" : "Blues",
+  "artworkUrl" : "http://a5.mzstatic.com/us/r30/Music/b8/b4/03/mzi.fylvraac.100x100-75.jpg",
+  "rating" : 1
+} ]
