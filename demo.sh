@@ -34,7 +34,7 @@ function help() {
 
 function add_feature() {
 	cp -r code_staging/feature/* .
-	git add *
+	git add .
 	git commit -m "Adding the feature"
 	git push origin master
 	logSuccess "Feature added and committed"
@@ -44,7 +44,7 @@ function add_feature() {
 
 function add_feature_fix() {
 	cp -r code_staging/fix/* .
-	git add *
+	git add .
 	git commit -m "Adding the feature fix"
 	git push origin master
 	logSuccess "Feature fix added and committed"
