@@ -1,17 +1,13 @@
 apply plugin: 'propdeps'
 apply plugin: 'propdeps-maven'
-apply plugin: 'spring-boot'
-
-apply plugin: 'java'
-
-apply plugin: 'eclipse-wtp'
-apply plugin: 'idea'
 apply plugin: 'propdeps-idea'
 apply plugin: 'propdeps-eclipse'
+apply plugin: 'idea'
+apply plugin: 'eclipse-wtp'
 
-apply plugin: 'tomcat'
+apply plugin: 'spring-boot'
+apply plugin: 'java'
 apply plugin: 'war'
-
 apply plugin: 'cloudfoundry'
 
 allprojects {
@@ -22,56 +18,43 @@ allprojects {
     }
 }
 
-sourceSets {
-    main {
-        java {
-            srcDir 'src/main/java'
-        }
-        resources {
-            srcDir 'src/main/resources'
-            srcDir 'src/main/java'
-        }
-    }
-}
-
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
-archivesBaseName = "spring-music"
-
-jar {
-    manifest {
-        attributes 'Implementation-Title': 'Spring Sample Application', 'Implementation-Version': version
-    }
-}
+sourceCompatibility = "${javaVersion}"
+targetCompatibility = "${javaVersion}"
 
 buildscript {
     repositories {
-        jcenter()
-        mavenLocal()
-        mavenCentral()
-		maven { url 'http://repo.spring.io/plugins-release' }
+      jcenter()
+      mavenLocal()
+      mavenCentral()
+		  maven { url 'http://repo.spring.io/plugins-release' }
     }
 
     dependencies {
-		classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.6'
-        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.1.8.RELEASE'
-        classpath 'org.gradle.api.plugins:gradle-tomcat-plugin:1.2.5'
-        classpath 'org.cloudfoundry:cf-gradle-plugin:1.0.3'
+		  classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+      classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.6'
+      classpath 'org.cloudfoundry:cf-gradle-plugin:1.0.3'
     }
 }
 
 repositories {
     jcenter()
     mavenLocal()
-    maven { url "http://repo.spring.io/milestone" }
     mavenCentral()
+    maven { url "http://repo.spring.io/milestone" }
+}
+
+configurations {
+    //http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#build-tool-plugins-gradle-packaging
+    providedRuntime
 }
 
 dependencies {
-    // Spring and dependencies
+    // Spring Boot
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.boot:spring-boot-starter-actuator'
-	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+	  compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 
     // Spring Cloud
     compile "org.springframework.cloud:spring-cloud-spring-service-connector:${springCloudVersion}"
@@ -89,28 +72,21 @@ dependencies {
     compile 'org.webjars:angular-ui-bootstrap:0.10.0-1'
     compile 'org.webjars:jquery:2.1.0-2'
 
-    // Spring Testing
-    testCompile 'org.springframework.boot:spring-boot-starter-test'
-
-	// Project Lombok
-	provided 'org.projectlombok:lombok:1.14.4'
+  	// Project Lombok
+  	provided 'org.projectlombok:lombok:1.14.4'
 }
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.9'
 }
 
+// omit the version from the war file name, but leave it in manifest
 war {
-    // omit the version from the war file name
     ext.warversion = version
     version = ""
     manifest {
         attributes 'Implementation-Title': 'Spring Sample Application', 'Implementation-Version': ext.warversion
     }
-}
-
-tomcatRun {
-    outputFile = file('tomcat.log')
 }
 
 cloudfoundry {
