@@ -5,24 +5,30 @@ import java.net.URL;
 
 import org.junit.Assert;
 import org.junit.rules.ExternalResource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class RunningApp extends ExternalResource {
 
 	public static final String PROPERTY_TEST_APP_URL = "test.app.url";
 
-	private EmbeddedApp embeddedApp = null;
+	private static final Logger log = LoggerFactory.getLogger(RunningApp.class);
+	
+	private final String appUrl;
 
 	public RunningApp(Class<?> application) {
-		if (!isTargetingRemoteApp()) {
-			embeddedApp = new EmbeddedApp(application);
+		
+		if (isTargetingRemoteApp()) {
+			this.appUrl = remoteUrl();
+		} else {
+			this.appUrl = embeddedUrl(application);
 		}
 		
-		System.out.println(String.format("Targetting running app at %s", url()));
+		log.info("Tests targetting running app at {}", url());
 	}
 
 	boolean isTargetingRemoteApp() {
-		String appUrl = System.getProperty(PROPERTY_TEST_APP_URL);
-		return appUrl != null && isValidUrl(appUrl);
+		return remoteUrl() != null && isValidUrl(remoteUrl());
 	}
 
 	boolean isValidUrl(String url) {
@@ -37,15 +43,17 @@ public class RunningApp extends ExternalResource {
 		}
 		return validUrl;
 	}
+	
+	String remoteUrl() {
+		return System.getProperty(PROPERTY_TEST_APP_URL);
+	}
+	
+	String embeddedUrl(Class<?> application) {
+		return EmbeddedApp.instance(application).url();
+	}
 
 	public String url() {
-		String url = System.getProperty(PROPERTY_TEST_APP_URL);
-
-		if (embeddedApp != null) {
-			url = embeddedApp.url();
-		}
-
-		return url;
+		return this.appUrl;
 	}
 
 }

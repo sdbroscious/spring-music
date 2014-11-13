@@ -22,15 +22,23 @@ sourceCompatibility = "${javaVersion}"
 targetCompatibility = "${javaVersion}"
 
 buildscript {
+	
+	ext {
+		javaVersion = '1.7'
+		springBootVersion = '1.1.8.RELEASE'
+		springCloudVersion = '1.0.0.RELEASE'
+		thucydidesVersion = '0.9.229'
+	}
+	
     repositories {
       jcenter()
       mavenLocal()
       mavenCentral()
-		  maven { url 'http://repo.spring.io/plugins-release' }
+	  maven { url 'http://repo.spring.io/plugins-release' }
     }
 
     dependencies {
-		  classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+      classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
       classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.6'
       classpath 'org.cloudfoundry:cf-gradle-plugin:1.0.3'
     }
@@ -52,7 +60,7 @@ dependencies {
     // Spring Boot
     compile 'org.springframework.boot:spring-boot-starter-web'
     compile 'org.springframework.boot:spring-boot-starter-actuator'
-	  compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 
@@ -74,6 +82,11 @@ dependencies {
 
   	// Project Lombok
   	provided 'org.projectlombok:lombok:1.14.4'
+	  
+	// Acceptance Testing
+	testCompile "net.thucydides:thucydides-core:${thucydidesVersion}"
+	testCompile "net.thucydides:thucydides-junit:${thucydidesVersion}"
+    testCompile "com.jayway.restassured:rest-assured:2.3.2"
 }
 
 task wrapper(type: Wrapper) {
@@ -88,6 +101,15 @@ war {
         attributes 'Implementation-Title': 'Spring Sample Application', 'Implementation-Version': ext.warversion
     }
 }
+
+//test.doLast {
+//	ant.taskdef(name: "thucydides", 
+//		        classname:"net.thucydides.ant.ThucydidesReportingTask",
+//				classpath: sourceSets.test.runtimeClasspath.asPath)
+//	
+//	ant.thucydides( outputDirectory: 'build/thucydides', sourceDirectory: 'build/test_results' )
+//
+//}
 
 cloudfoundry {
     target = "https://api.run.pivotal.io"
