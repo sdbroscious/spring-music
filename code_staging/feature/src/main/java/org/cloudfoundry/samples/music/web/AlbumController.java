@@ -26,12 +26,6 @@ public class AlbumController {
         return repository.findAll();
     }
 
-//    @RequestMapping(method = RequestMethod.PUT)
-//    public Album add(@RequestBody @Valid Album album) {
-//        logger.info("Adding album " + album.getId());
-//        return repository.save(album);
-//    }
-
     @RequestMapping(method = RequestMethod.POST)
     public Album update(@RequestBody @Valid Album album) {
         logger.info("Updating album " + album.getId());
@@ -54,7 +48,7 @@ public class AlbumController {
     void enrichAlbumArtworkThumbnail(Album album) {
     	if (album.getArtworkUrl() == null) {
     		logger.info("Attempting album artwork enrichment");
-    		album.setArtworkUrl(AlbumArtworkHelper.artworkThumbnailUrlFor(album));
+    		album.setArtworkUrl(AlbumArtworkHelper.artworkUrlFor(album));
        	}
     }
     

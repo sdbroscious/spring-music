@@ -1,69 +1,53 @@
 package org.cloudfoundry.samples.music.web;
 
-import java.net.URL;
-
 import lombok.Data;
 
 import org.cloudfoundry.samples.music.model.Album;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.client.RestTemplate;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jayway.jsonpath.JsonPath;
 
 public class AlbumArtworkHelper {
 
 	private static final Logger log = LoggerFactory.getLogger(AlbumArtworkHelper.class);
 	
-	private static final String artworkQueryUrlTemplate = "http://playground.bendodson.com/itunes-artwork-finder/?query=%s %s&entity=album&country=us";
+	private static final String artworkQueryUrlTemplate = "https://itunes.apple.com/search?term=%s %s&entity=album&limit=1";
 
-	public static String artworkThumbnailUrlFor(Album album) {
-		
-		return convertToThumbnail(artworkUrlFor(album));
-
-	}
-	
 	public static String artworkUrlFor(Album album) {
 		String artworkUrl = null;
 		
-		String artworkQueryUrl = String.format(artworkQueryUrlTemplate,
-				album.getArtist(), album.getTitle()).replace(" ", "+");
-
-		log.info("Loading album artwork URL from '{}'", artworkQueryUrl);
-
-		ArtworkUrlData[] urlData = new ArtworkUrlData[] {};
-		try {
-			urlData = new ObjectMapper()
-					.readValue(new URL(artworkQueryUrl), ArtworkUrlData[].class);
-		} catch (Exception e) {
-			log.error("Error loading artwork data: ", e);
-		}
-
-		artworkUrl = urlData.length > 0 ? urlData[0].getUrl() : null;
+		String iTunesSearchUrl = String.format(artworkQueryUrlTemplate, album.getArtist(), album.getTitle());
 		
-		log.info("artworkUrl = {}", artworkUrl);
+		log.info("Loading album artwork info from {}", iTunesSearchUrl);
+		String iTunesResult = new RestTemplate().getForObject(iTunesSearchUrl, String.class);
 		
+		log.debug("iTunes Search Result: {}", iTunesResult);
+		artworkUrl = extractArtworkUrl(iTunesResult);
+		
+		log.info("Using artworkURL: {}", artworkUrl);
 		return artworkUrl;
 
 	}
-
-	public static String convertToThumbnail(String imageUrl) {
-		String urlWithSmallPic = null;
-
-		if (imageUrl != null) {
-			urlWithSmallPic = imageUrl.replace(".600x600-", ".100x100-");
+	
+	static String extractArtworkUrl(String searchResults) {
+		String url = null;
+		
+		if (searchResults != null && 
+				JsonPath.parse(searchResults).read("$.resultCount", Integer.class) > 0) {
+		
+			url = JsonPath.parse(searchResults).read("$.results[0].artworkUrl100");
 		}
-
-		return urlWithSmallPic;
+		
+		return url;
 	}
 	
 	@Data
 	static class ArtworkUrlData {
-		String url;
-		String hires;
-		String title;
-		int width;
-		int height;
-		String warning;
+		String artistName;
+		String collectionName;
+		String artworkUrl100;
 	}
 	
 }

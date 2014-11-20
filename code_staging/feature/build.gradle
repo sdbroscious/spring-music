@@ -92,8 +92,11 @@ dependencies {
     // Spring Testing
     testCompile 'org.springframework.boot:spring-boot-starter-test'
 
-	// Project Lombok
-	provided 'org.projectlombok:lombok:1.14.4'
+    // Miscellaneous
+    compile 'com.jayway.jsonpath:json-path:1.2.0'
+
+  	// Project Lombok
+    provided 'org.projectlombok:lombok:1.14.4'
 }
 
 task wrapper(type: Wrapper) {
