@@ -1,9 +1,10 @@
 package org.cloudfoundry.samples.test;
 
+import java.net.ServerSocket;
+
+import org.cloudfoundry.samples.music.Application;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.context.embedded.EmbeddedWebApplicationContext;
 
 public class EmbeddedApp {
 
@@ -24,20 +25,37 @@ public class EmbeddedApp {
 	 */
 	private static final Logger log = LoggerFactory.getLogger(EmbeddedApp.class);
 	
-	EmbeddedWebApplicationContext app = null;
+	private String url;
 
 	private EmbeddedApp(Class<?> application) {
-		System.setProperty("server.port", "0");  // Use available port for tc listener.
+		String tcHttpPort = Integer.toString(availablePort());
+		
+		System.setProperty("server.port", tcHttpPort);  // Use available port for tc listener.
 		System.setProperty("management.port", "-1");  // Turn off actuator http endpoints
 		System.setProperty("spring.jmx.enabled", "false");  // Turn off actuator jmx endpoints
+		System.setProperty("spring.profiles.active", "cloud");
 		
-		app = (EmbeddedWebApplicationContext) SpringApplication.run(application, new String[] {});
+		url = String.format("http://localhost:%s/", tcHttpPort);
 		
-		log.info("Embedded application available at {}", url());
+		Application.main(new String[] {});
+		
+		log.info("Embedded application available at {}", url);
 	}
 		
 	public String url() {
-		return String.format("http://localhost:%d/", app.getEmbeddedServletContainer().getPort());
+		return url;
+	}
+	
+	private int availablePort() {
+		int port = 0;
+		
+		try (ServerSocket reconSocket = new ServerSocket(0)) {
+			port = reconSocket.getLocalPort();
+		} catch (Exception e) {
+			log.error("Error finding available port.", e);
+		}
+		
+		return port;
 	}
 		
 }

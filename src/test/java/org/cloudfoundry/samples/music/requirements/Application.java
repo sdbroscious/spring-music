@@ -6,10 +6,15 @@ public class Application {
 	
     @Feature
     public class ManageAlbums {
-        public class AddNewAlbum {}
+        public class CreateAlbum {}
+        public class UpdateAlbum {}
         public class DeleteAlbum {}
-        public class LookupAlbum {}
-        public class ListAlbums {}
+        public class FindAlbums {}
     }
     
+    @Feature
+    public class AppInspection {
+    	public class InspectEnvironment {}
+    	public class InspectResiliency {}
+    }
 }

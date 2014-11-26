@@ -1,4 +1,4 @@
-package org.cloudfoundry.samples.music.config;
+		package org.cloudfoundry.samples.music.config;
 
 import javax.sql.DataSource;
 
@@ -19,8 +19,6 @@ public class CloudDataSourceConfig extends AbstractCloudConfig {
 	
 	public static final String DEFAULT_DB_MAX_WAIT_TIME = "200";
 	
-	public static final String DEFAULT_DB_SERVICE_NAME = "mysql";
-	
 	@Autowired
 	Environment env;
 	
@@ -31,17 +29,14 @@ public class CloudDataSourceConfig extends AbstractCloudConfig {
 				Integer.parseInt(env.getProperty("DB_MAX_POOL_SIZE", DEFAULT_DB_MAX_POOL_SIZE));
 		int maxWaitTime = 
 				Integer.parseInt(env.getProperty("DB_MAX_WAIT_TIME", DEFAULT_DB_MAX_WAIT_TIME));
-		String databaseServiceName = 
-				env.getProperty("DB_SERVICE_NAME", DEFAULT_DB_SERVICE_NAME);
-		
+
 		PooledServiceConnectorConfig.PoolConfig poolConfig =
 	            new PooledServiceConnectorConfig.PoolConfig(maxPoolSize, maxWaitTime);
 
 	    DataSourceConfig.ConnectionConfig connectionConfig =
 	            new DataSourceConfig.ConnectionConfig("characterEncoding=UTF-8");
 
-		return connectionFactory().dataSource(databaseServiceName,
-				new DataSourceConfig(poolConfig, connectionConfig));
+		return connectionFactory().dataSource(new DataSourceConfig(poolConfig, connectionConfig));
 
 	}
 	

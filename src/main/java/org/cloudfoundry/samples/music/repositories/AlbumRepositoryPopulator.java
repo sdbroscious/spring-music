@@ -53,22 +53,17 @@ public class AlbumRepositoryPopulator implements ApplicationListener<ContextRefr
     public void populate(AlbumRepository repository) {
         Object entity = getEntityFromResource(sourceData);
 
-        if (entity instanceof Collection) {
-            for (Album album : (Collection<Album>) entity) {
-                if (album != null) {
-                    repository.save(album);
-                }
+        for (Album album : (Collection<Album>) entity) {
+            if (album != null) {
+                repository.save(album);
             }
-        } else {
-            repository.save((Album) entity);
         }
+            
     }
 
     private Object getEntityFromResource(Resource resource) {
         try {
             return resourceReader.readFrom(resource, this.getClass().getClassLoader());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        } catch (Exception e) { throw new RuntimeException(e); }
     }
 }
