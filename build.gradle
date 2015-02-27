@@ -83,7 +83,7 @@ dependencies {
     compile 'org.webjars:jquery:2.1.0-2'
 
   	// Project Lombok
-  	provided 'org.projectlombok:lombok:1.14.4'
+  	compile 'org.projectlombok:lombok:1.14.4'
 	testCompile 'com.google.guava:guava-testlib:18.0'
 
 	// Acceptance Testing
