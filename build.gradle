@@ -5,6 +5,7 @@ apply plugin: 'propdeps-eclipse'
 apply plugin: 'idea'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'jacoco'
+apply plugin: 'maven'
 
 apply plugin: 'spring-boot'
 apply plugin: 'java'
