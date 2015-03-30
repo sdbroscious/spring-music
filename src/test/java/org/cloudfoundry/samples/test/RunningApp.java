@@ -24,7 +24,7 @@ public class RunningApp extends ExternalResource {
 			this.appUrl = embeddedUrl(application);
 		}
 		
-		log.info("Tests targetting running app at {}", url());
+		log.warn("Tests targetting running app at {}", url());
 	}
 
 	boolean isTargetingRemoteApp() {
