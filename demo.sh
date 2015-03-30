@@ -46,7 +46,7 @@ function add_feature() {
 	git add .
 	git commit -m "Adding the feature"
 	if [ "$push_changes" = true ]; then
-		git push origin master
+		git push origin
 	fi
 	logSuccess "Feature added and committed"
 
@@ -58,7 +58,7 @@ function add_feature_fix() {
 	git add .
 	git commit -m "Adding the feature fix"
 	if [ "$push_changes" = true ]; then
-		git push origin master
+		git push origin
 	fi
 	logSuccess "Feature fix added and committed"
 
@@ -69,7 +69,7 @@ function reset() {
 	git reset --hard $INITIAL_GIT_TAG
 	git commit -m "Resetting post demo"
 	if [ "$push_changes" = true ]; then
-		git push origin master --force
+		git push origin --force
 	fi
 	logSuccess "Done with branch reset"
 
