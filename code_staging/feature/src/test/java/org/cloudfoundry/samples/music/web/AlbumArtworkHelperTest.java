@@ -1,4 +1,4 @@
-package com.cloudfoundry.samples.music.web;
+package org.cloudfoundry.samples.music.web;
 
 import org.cloudfoundry.samples.music.model.Album;
 import org.cloudfoundry.samples.music.web.AlbumArtworkHelper;

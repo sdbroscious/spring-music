@@ -1,7 +1,6 @@
 package org.cloudfoundry.samples.music;
 
 import static org.cloudfoundry.samples.music.web.AlbumArtworkHelper.artworkUrlFor;
-import static org.cloudfoundry.samples.music.web.AlbumArtworkHelper.convertToThumbnail;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -85,7 +84,7 @@ public class AlbumJsonArtworkEnricher {
 		for (Album album : priorToArtwork) {
 			log.info("{}", album);
 			
-			album.setArtworkUrl(convertToThumbnail(artworkUrlFor(album)));
+			album.setArtworkUrl(artworkUrlFor(album));
 			album.setRating(random.nextInt(6));
 			
 			afterArtwork.add(album);

@@ -28,7 +28,7 @@
   "artist" : "Jimi Hendrix Experience",
   "releaseYear" : "1967",
   "genre" : "Rock",
-  "artworkUrl" : "http://a1.mzstatic.com/us/r30/Music/7d/55/12/mzi.wwsnajjq.100x100-75.jpg",
+  "artworkUrl" : "http://is1.mzstatic.com/image/pf/us/r30/Music3/v4/29/e1/c4/29e1c48d-f96d-9ba8-04bf-e3c6c2876ff5/dj.tbwlxwoh.100x100-75.jpg",
   "rating" : 4
 }, {
   "_class" : "org.cloudfoundry.samples.music.model.Album",
