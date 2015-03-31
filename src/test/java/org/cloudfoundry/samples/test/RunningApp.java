@@ -3,6 +3,7 @@ package org.cloudfoundry.samples.test;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
 import org.junit.rules.ExternalResource;
 import org.slf4j.Logger;
@@ -45,7 +46,7 @@ public class RunningApp extends ExternalResource {
 	}
 	
 	String remoteUrl() {
-		return System.getProperty(PROPERTY_TEST_APP_URL);
+		return StringUtils.trimToNull(System.getProperty(PROPERTY_TEST_APP_URL));
 	}
 	
 	String embeddedUrl(Class<?> application) {
