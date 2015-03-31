@@ -48,10 +48,13 @@ public class InspectEnvironmentStory extends RestAcceptanceTest {
 	    when().
 	    	get("/service").
 	    then().
-	    	assertThat().statusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
+	    	assertThat().statusCode(HttpStatus.OK.value());
 		
-		// temporarily accept 500
-		// TODO figure out why H2 cloud service is causing exception with cloud.getServiceInfo.
+		// This will return a 500 status code when running as junit test in 
+		// Eclipse, but is fine when launched via spring-boot.
+		// 
+		// TODO Figure out why H2 cloud service is causing exception with 
+		//      cloud.getServiceInfo in embedded app instance.
 		
 	}
 	

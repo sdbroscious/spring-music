@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class RunningApp extends ExternalResource {
 
-	public static final String PROPERTY_TEST_APP_URL = "test.app.url";
+	public static final String PROPERTY_TEST_APP_URL = "test_app_url";
 
 	private static final Logger log = LoggerFactory.getLogger(RunningApp.class);
 	

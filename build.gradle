@@ -88,6 +88,16 @@ task wrapper(type: Wrapper) {
     gradleVersion = '1.9'
 }
 
+test {
+    
+    // Point acceptance tests to the base url for the deployed app. 
+    systemProperty 'test_app_url', System.getProperty('test_app_url')
+    
+    // show standard out and standard error of the test JVM(s) on the console
+    testLogging.showStandardStreams = true
+    
+}
+
 // omit the version from the war file name, but leave it in manifest
 war {
     ext.warversion = version
