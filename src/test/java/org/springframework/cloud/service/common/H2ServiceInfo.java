@@ -10,20 +10,12 @@ public class H2ServiceInfo extends RelationalServiceInfo {
 
     public static final String URI_SCHEME = JDBC_URL_TYPE;
 
-    private String url;
     
     public H2ServiceInfo(String id, String cloudUri) {
-        super(id, cloudUri, URI_SCHEME);
-        this.url = convertToH2Url(cloudUri);
+        super(id, cloudUri, convertToH2Url(cloudUri), URI_SCHEME);
+        
     }
-
-	@Override
-    @ServiceProperty(category = "connection")
-    public String getJdbcUrl() {
-		return this.url;
-	}
-
-	private String convertToH2Url(String cloudUri) {
+	private static String convertToH2Url(String cloudUri) {
 		return new StringBuilder("jdbc:h2:").append(StringUtils.substringAfter(cloudUri, "h2://")).toString();
 	}
 	
