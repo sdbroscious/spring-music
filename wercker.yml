@@ -1,8 +1,8 @@
 box: maven:latest
 build:
   steps:
-    - xenoterracide/maven:
-        goals: test install
+    - valery1707/gradle:
+        tasks: clean assemble
 deploy:
   steps:
     - xchapter7x/cf-push:

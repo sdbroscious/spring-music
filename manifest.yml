@@ -2,6 +2,6 @@
 applications:
 - name: cd-demo-music
   buildpack: java_buildpack
-  path: target/spring-music.jar
+  path: build/libs/spring-music.war
   services:
   - mysql

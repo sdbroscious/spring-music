@@ -1,6 +1,6 @@
 # Check if images are available locally
 DOCKER_LOCAL=""
-if [[ $(docker images|grep maven) ]]; then 
+if [[ $(docker images|grep gradle) ]]; then 
   echo "Using previously cached docker images"
   DOCKER_LOCAL="--docker-local"
 fi
