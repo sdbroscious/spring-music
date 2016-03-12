@@ -1,0 +1,9 @@
+# Check if images are available locally
+DOCKER_LOCAL=""
+if [[ $(docker images|grep maven) ]]; then 
+  echo "Using previously cached docker images"
+  DOCKER_LOCAL="--docker-local"
+fi
+rm -fR _builds _steps _projects _cache _temp
+wercker --verbose build --git-domain github.com --git-owner pivotalservices --git-repository spring-music ${DOCKER_LOCAL}
+rm -fR _builds _steps _projects _cache _temp
