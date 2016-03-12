@@ -118,3 +118,7 @@ Database drivers for MySQL, Postgres, MongoDB, and Redis are included in the pro
 you will need to download the appropriate driver (e.g. from http://www.oracle.com/technetwork/database/enterprise-edition/jdbc-112010-090769.html?ssSourceSiteId=otnjp),
 add the driver .jar file to the `src/main/webapp/WEB-INF/lib` directory in the project, and re-build the
 application .war file using `./gradlew assemble`.
+
+#### Wercker
+
+[![wercker status](https://app.wercker.com/status/ee6e2b6b5ea093692dacf57a036b7460/m "wercker status")](https://app.wercker.com/project/bykey/ee6e2b6b5ea093692dacf57a036b7460)
